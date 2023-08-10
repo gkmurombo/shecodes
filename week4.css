@@ -1,0 +1,38 @@
+img {
+  width: 100px;
+  margin: left;
+}
+.weatherapp {
+  border: 1px solid grey;
+  padding: 15px;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+h1 {
+  color: grey;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 0;
+  line-height: 28px;
+  padding-top: 10px;
+}
+.temperature {
+  font-size: 60px;
+  font-weight: 400;
+  color: black;
+  line-height: 1;
+}
+a {
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 0px;
+}
+li {
+  color: darkgray;
+}
+.btn-primary {
+  background-color: blue;
+  color: azure;
+  border-color: blue;
+}
