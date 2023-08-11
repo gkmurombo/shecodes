@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="stylesheet" href="week4.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <head>
-    <link rel="stylesheet" href="week4.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
 
@@ -27,15 +28,15 @@
           />
           <input
             type="submit"
-            value="current"
+            value="Current"
             class="btn btn-success"
-            id="current"
+            id="currentb"
           />
         </form>
         <h1 id="city">Sydney NSW, Australia</h1>
         <ul>
           <li class="ctime">Monday</li>
-          <li>Partly Cloud</li>
+          <li id="descrip">Partly Cloud</li>
         </ul>
         <div class="row">
           <div class="col-6">
@@ -47,20 +48,18 @@
                 />
               </div>
               <div class="col-9" id="temp">
-                <span class="temperature">19</span>
+                <span class="temperature"></span>
                 <span class="unit" id="unit">
-                  <a href="#" id="degrees">°C</a>"|"<a href="#" id="fah"
-                    >F</a
-                  ></span
-                >
+                  <a href="#" id="degrees">°C</a>
+                </span>
               </div>
             </div>
           </div>
           <div class="col-6">
             <ul class="weatherlist">
               <li>Precipitation: 0%</li>
-              <li>Humidity 77%</li>
-              <li>Wind: 8km/hr</li>
+              <li id="hum">Humidity 77%</li>
+              <li id="win">Wind: 8km/hr</li>
             </ul>
           </div>
         </div>
