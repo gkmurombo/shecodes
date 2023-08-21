@@ -32,9 +32,10 @@ function changeCity(event) {
 }
 function showWeather(response) {
   let icon = document.querySelector("#image");
-  icon.setAttribute =
-    ("src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let temperature = Math.round(response.data.main.temp);
   let humidity = Math.round(response.data.main.humidity);
   let wspeed = Math.round(response.data.wind.speed);
