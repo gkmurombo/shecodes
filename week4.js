@@ -31,30 +31,27 @@ function changeCity(event) {
   axios.get(apiUrl).then(showWeather);
 }
 function showWeather(response) {
-  let icon = document.querySelector("#image");
+  let icon = document.querySelector("#iconn");
+  let city = document.querySelector("#city");
+  let desc = document.querySelector("#descrip");
+  let temp = document.querySelector(".temperature");
+  let humi = document.querySelector("#hum");
+  let wispeed = document.querySelector("#win");
   icon.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  let temperature = Math.round(response.data.main.temp);
-  let humidity = Math.round(response.data.main.humidity);
-  let wspeed = Math.round(response.data.wind.speed);
-  console.log(response.data);
-  let city = document.querySelector("#city");
+  celciustemp = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
-  let descr = response.data.weather[0].main;
-  let desc = document.querySelector("#descrip");
-  desc.innerHTML = descr;
-  let temp = document.querySelector(".temperature");
-  temp.innerHTML = temperature;
-  let humi = document.querySelector("#hum");
-  humi.innerHTML = `Humidity : ${humidity}`;
-  let wispeed = document.querySelector("#win");
-  wispeed.innerHTML = `WindSpeed : ${wspeed} km/hr`;
+  desc.innerHTML = response.data.weather[0].main;
+  temp.innerHTML = celciustemp;
+  humi.innerHTML = `Humidity : ${Math.round(response.data.main.humidity)}`;
+  wispeed.innerHTML = `WindSpeed : ${Math.round(
+    response.data.wind.speed
+  )} km/hr`;
 }
 function allIn(event) {
   event.preventDefault();
-
   function currentloc(position) {
     console.log(position);
 
@@ -67,7 +64,25 @@ function allIn(event) {
 
   navigator.geolocation.getCurrentPosition(currentloc);
 }
+function fahtemp(event) {
+  event.preventDefault();
+  let ftemp = document.querySelector(".temperature");
+  degree.classList.remove("active");
+  let fahte = (celciustemp * 9) / 5 + 32;
+  ftemp.innerHTML = Math.round(fahte);
+}
+function degreetemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector(".temperature");
+  temp.innerHTML = Math.round(celciustemp);
+}
+let Fheit = document.querySelector("#Fahrenheit");
+Fheit.addEventListener("click", fahtemp);
 
+let degree = document.querySelector("#degrees");
+degree.addEventListener("click", degreetemp);
+
+let celciustemp = null;
 let currentbttn = document.querySelector("#currentb");
 currentbttn.addEventListener("click", allIn);
 let searchbutton = document.querySelector("#searchb");
