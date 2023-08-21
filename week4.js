@@ -68,6 +68,7 @@ function fahtemp(event) {
   event.preventDefault();
   let ftemp = document.querySelector(".temperature");
   degree.classList.remove("active");
+  Fheit.classList.add("active");
   let fahte = (celciustemp * 9) / 5 + 32;
   ftemp.innerHTML = Math.round(fahte);
 }

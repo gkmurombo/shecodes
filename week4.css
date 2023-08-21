@@ -36,3 +36,11 @@ li {
   color: azure;
   border-color: blue;
 }
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
