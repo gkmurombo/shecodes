@@ -98,41 +98,17 @@ function showWeather(response) {
   getForecast(response.data.coord);
 }
 
-function allIn(event) {
-  event.preventDefault();
-  function currentloc(position) {
-    console.log(position);
-
-    let Apkey = "88724523008dc9e1be18f6eb6a959b67";
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${Apkey}&units=metric`;
-    axios.get(url).then(showWeather);
-  }
-
-  navigator.geolocation.getCurrentPosition(currentloc);
-}
-function fahtemp(event) {
-  event.preventDefault();
-  let ftemp = document.querySelector(".temperature");
-  degree.classList.remove("active");
-  Fheit.classList.add("active");
-  let fahte = (celciustemp * 9) / 5 + 32;
-  ftemp.innerHTML = Math.round(fahte);
-}
 function degreetemp(event) {
   event.preventDefault();
   let temp = document.querySelector(".temperature");
   temp.innerHTML = Math.round(celciustemp);
 }
-let Fheit = document.querySelector("#Fahrenheit");
-Fheit.addEventListener("click", fahtemp);
 
 let degree = document.querySelector("#degrees");
 degree.addEventListener("click", degreetemp);
 
 let celciustemp = null;
 let currentbttn = document.querySelector("#currentb");
-currentbttn.addEventListener("click", allIn);
+
 let searchbutton = document.querySelector("#searchb");
 searchbutton.addEventListener("click", changeCity);
