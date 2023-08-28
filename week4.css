@@ -1,5 +1,5 @@
 #iconn {
-  width: 100px;
+  width: 90px;
   margin: left;
 }
 .weatherapp {
@@ -58,4 +58,8 @@ h6 {
 }
 #mintemp {
   opacity: 0.4;
+}
+
+span {
+  font-size: 10px;
 }
