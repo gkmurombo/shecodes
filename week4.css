@@ -1,4 +1,4 @@
-img {
+#iconn {
   width: 100px;
   margin: left;
 }
@@ -23,6 +23,7 @@ h1 {
   color: black;
   line-height: 1;
 }
+
 a {
   text-decoration: none;
   font-size: 10px;
@@ -43,4 +44,18 @@ li {
 
 .active:hover {
   text-decoration: none;
+}
+
+h6 {
+  text-align: center;
+  padding-bottom: 0px;
+  opacity: 0.5;
+}
+.weather-forecast {
+  margin-top: 20px;
+  margin-left: 10px;
+  text-align: center;
+}
+#mintemp {
+  opacity: 0.4;
 }
